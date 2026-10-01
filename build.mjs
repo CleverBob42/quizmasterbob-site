@@ -4,8 +4,11 @@ const SUPPORT_ENDPOINT = 'https://www.izeus.org/_functions/support';
 const ORIGIN = 'https://quizmasterbob.izeus.org';
 const V = Date.now().toString(36);
 
+const APP_STORE = 'https://apps.apple.com/au/app/quizmaster-bob/id6778641163';
+const HOST_SITE = 'https://bobquiz-272a7.web.app/login';
 const appleLogo = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-.9-2.4-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>';
-const storeBadge = `<a class="store" href="#get">${appleLogo}<span><small>Coming soon on the</small><b>App Store</b></span></a>`;
+const storeBadge = `<a class="store" href="${APP_STORE}">${appleLogo}<span><small>Download on the</small><b>App Store</b></span></a>`;
+const hostLink = `<a class="btn btn-ghost" href="${HOST_SITE}">Host a quiz</a>`;
 
 const icon = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
 const icons = {
@@ -82,15 +85,15 @@ const pages = {
   <div>
     <span class="eyebrow">Live trivia &middot; Venue screen &middot; Player app</span>
     <h1>Play along with <span class="grad">Quizmaster Bob</span></h1>
-    <p class="lead">The host runs the quiz on the big screen. Your team joins with the 4-digit code, answers on your phone, and watches the scores land in the room.</p>
+    <p class="lead">Live trivia for the room. The host runs the night on the big screen, and every team answers on their own phone.</p>
     <div class="cta-row">
       ${storeBadge}
-      <a class="btn btn-ghost" href="#how">How it works</a>
+      ${hostLink}
     </div>
-    <p class="meta">Free player app &middot; No account to join a quiz &middot; Hosts run the night on the website</p>
+    <p class="meta">Free for players on the App Store &middot; Hosts sign in on the website to run the quiz and subscribe</p>
   </div>
   <div class="pitch-art">
-    ${frame('join', 'Enter a four-digit join code and tap Join Quiz', false)}
+    ${frame('scores', 'A live question with the points and how to answer', false)}
     <img class="pitch-logo" src="assets/icon-512.png" alt="Quizmaster Bob app icon" width="112" height="112">
   </div>
 </section>
@@ -137,7 +140,7 @@ const pages = {
   <p class="section-sub">Joining a quiz does not need a subscription. Hosts run paid tools on the website.</p>
   <div class="plans">
     <div class="plan glass"><h3>Player app</h3><ul><li>Free to download</li><li>Join with the venue code</li><li>No account and no payment in the app</li></ul></div>
-    <div class="plan glass"><h3>Quiz hosts</h3><ul><li>Run the night from the Quizmaster Bob website</li><li>Question library, rounds and the venue screen</li><li>Host plans are billed on the website, not in the player app</li></ul></div>
+    <div class="plan glass"><h3>Quiz hosts</h3><ul><li>Run the night from the Quizmaster Bob website</li><li>Question library, rounds and the venue screen</li><li>Host plans are billed on the website, not in the player app</li></ul><p><a href="${HOST_SITE}">Sign in to host</a></p></div>
   </div>
 </section>
 
@@ -145,8 +148,11 @@ const pages = {
   <div class="band glass">
     <img src="assets/logo-full.png" alt="" width="88" height="88">
     <h2>Ready for the next round?</h2>
-    <p>Quizmaster Bob for players is coming soon on the App Store.</p>
-    ${storeBadge}
+    <p>Quizmaster Bob for players is on the App Store. Hosts run the night, and manage their plan, on the website.</p>
+    <div class="cta-row" style="justify-content:center">
+      ${storeBadge}
+      ${hostLink}
+    </div>
     <p class="fine">Ask the venue host for the join code. The player app is for live quizzes, not a standalone trivia game.</p>
   </div>
 </section>
